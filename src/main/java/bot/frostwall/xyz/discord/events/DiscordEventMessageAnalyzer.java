@@ -28,7 +28,7 @@ public class DiscordEventMessageAnalyzer extends ListenerAdapter {
 
 	private String feature = "discord_event_message_analyzer";
 	
-	//Precompiled pattern and matcher.
+	//Precompiled pattern and matcher to improve performance over creating multiple instances.
 	private Pattern pattern = Pattern.compile("((https?):((//)|(\\\\\\\\))+([\\w\\d:#@%/;$()~_?\\+-=\\\\\\.&](#!)?)*)");
 	private Matcher matcher = pattern.matcher("");
 	

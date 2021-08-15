@@ -28,7 +28,7 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class DiscordBot {
 
-	public static final String VERSION = "v1.0.0";
+	public static final String VERSION = "v1.0.1";
 	public static final String PREFIX = "!f ";
 	
 	public static final int COLOR_SUCCESS = 65395;

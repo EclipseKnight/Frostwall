@@ -1,6 +1,7 @@
 package bot.frostwall.xyz.discord;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
 
@@ -273,5 +274,22 @@ public class DiscordUtils {
 		String guildId = DiscordBot.configuration.getGuildId();
 		
 		DiscordBot.jda.getGuildById(guildId).getTextChannelById(channelId).sendMessage(embed).queue();
+	}
+	
+	public static void sendTimedMessage(CommandEvent event, MessageEmbed embed, int ms, boolean isPrivate) {
+		
+		if (isPrivate) {
+			event.getMember().getUser().openPrivateChannel().queue(channel -> {
+				channel.sendMessage(embed).queue( m -> {
+					m.delete().queueAfter(ms, TimeUnit.MICROSECONDS);
+				});
+			});
+			
+			return;
+		}
+		
+		event.getChannel().sendMessage(embed).queue( m -> {
+			m.delete().queueAfter(ms, TimeUnit.MILLISECONDS);
+		});
 	}
 }

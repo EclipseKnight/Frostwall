@@ -25,6 +25,10 @@ public class DiscordCommandCheck extends Command {
 			return;
 		}
 		
+		if (!CommandUtils.fullUsageCheck(event, feature)) {
+			return;
+		}
+		
 		String domain = null;
 		URI uri = null;
 		
