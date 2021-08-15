@@ -1,4 +1,4 @@
-package bot.frostwall.xyz.discord.commands.events;
+package bot.frostwall.xyz.discord.events;
 
 import java.net.URI;
 import java.net.URISyntaxException;

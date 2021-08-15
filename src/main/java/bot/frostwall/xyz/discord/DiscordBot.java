@@ -18,7 +18,7 @@ import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import bot.frostwall.xyz.Launcher;
 import bot.frostwall.xyz.discord.commands.DiscordCommandCheck;
 import bot.frostwall.xyz.discord.commands.DiscordCommandTest;
-import bot.frostwall.xyz.discord.commands.events.DiscordEventMessageAnalyzer;
+import bot.frostwall.xyz.discord.events.DiscordEventMessageAnalyzer;
 import bot.frostwall.xyz.logger.Logger;
 import bot.frostwall.xyz.logger.Logger.Level;
 import net.dv8tion.jda.api.JDA;
