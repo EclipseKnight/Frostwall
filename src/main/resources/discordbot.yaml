@@ -1,0 +1,98 @@
+########################################################################################
+#                                                                                      #
+#      This is the configuration for the Discord API portion of the application.       #
+#      Read and input the apropriate information.                                      #
+#                                                                                      #
+########################################################################################
+
+bot:
+    # Name of your bot
+    name: Frostwall
+    
+    
+api:
+    
+    # Discord Application Client Id
+    discord_client_id:
+    
+    # Discord Application Client Token
+    discord_client_token:
+    
+    # Virus Total api key
+    virus_total_api_key:
+
+database:
+    # enabled or disable scheduled backups.
+    backup_enabled: true
+
+    # How frequently the database is backed up. Unit x many Hours.
+    backup_interval: 2
+    
+    # Max number of backups stored. If number of backups exceeds this integer, the oldest backup will get deleted. 
+    backup_quantity: 12
+    
+    # Path to store database backups. Left empty = Default path is within the generated folder.     
+    backup_path: 
+    
+    # channel to output backup logs in discord. null to not output.
+    backup_log_channel: null
+
+# Channel to output all of the approval embeds for allowing and denying links.
+link_approval_channel: 
+    
+# *Required for bot setup. Discord id of the bot owner
+owner_id:
+
+# Not required. Discord id(s) of the co-owners
+co_owner_ids:
+   -
+   
+#required for sending messages in some cases   
+guild_id:
+
+
+#example feature *=required
+#  poop_on_user   
+#     enabled:* [true, false] - is command disabled or not. 
+#     linked: [true, false] - does user have to be linked.
+#     affiliate: [true, false] - is affiliate or not. 
+#     description:* "input a description of this command, displayed via help command".
+#     channels: - [0]=null if command can be used everywhere, otherwise put channels it can be used in.
+#        - null*
+#     roles: - same as channels but for roles instead. 
+#        - null*
+
+features:
+    
+    #This event is is fired on messages received. This is what checks each message for links.
+    #this checks every channel except the channel ids you list.
+    discord_event_message_analyzer:   
+       enabled: true
+       channels:
+          - null
+
+    #test command
+    discord_command_test:
+       enabled: true
+       name: test
+       aliases: []
+       description: "test - for testing if the bot is running. "      
+       channels:
+          - null
+       roles:
+          - null
+          
+    #runs a check on the passed in link argument.
+    discord_command_check:
+       enabled: true
+       name: check
+       aliases: [c]
+       description: "check <https://example.com/> - runs a check on the link passed in and returns the results."      
+       channels:
+          - null
+       roles:
+          - null
+
+
+
+

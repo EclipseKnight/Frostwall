@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>xyz.frostwall.bot</groupId>
+	<artifactId>frostwall</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>frostwall</name>
+
+	<properties>
+		<maven.compiler.target>15</maven.compiler.target>
+		<maven.compiler.source>15</maven.compiler.source>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<url>https://jcenter.bintray.com/</url>
+		</repository>
+	</repositories>
+
+
+	<dependencies>
+		<!-- JDA -->
+		<dependency>
+			<groupId>net.dv8tion</groupId>
+			<artifactId>JDA</artifactId>
+			<version>4.2.0_180</version>
+		</dependency>
+
+		<!-- JDA Utilities -->
+		<dependency>
+			<groupId>com.jagrosh</groupId>
+			<artifactId>jda-utilities</artifactId>
+			<version>3.0.2</version>
+			<type>pom</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+			<version>2.11.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.12.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.12.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.jsondb/jsondb-core -->
+		<dependency>
+			<groupId>io.jsondb</groupId>
+			<artifactId>jsondb-core</artifactId>
+			<version>1.0.106</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.fusesource.jansi/jansi -->
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.14.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j -->
+		<dependency>
+			<groupId>net.lingala.zip4j</groupId>
+			<artifactId>zip4j</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<defaultGoal>clean package</defaultGoal>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.4</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<!-- Building an executable jar -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>bot.frostwall.xyz.Launcher</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+</project>
