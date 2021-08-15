@@ -36,8 +36,6 @@ public class DiscordBot {
 	public static final int COLOR_WARN = 16229903;
 	public static final int COLOR_FROST = 175323;
 	
-	public static final String RED_CIRCLE = "U+1F534";
-	public static final String GREEN_CIRCLE = "U+1F7E2";
 	public static final String RED_TICK = "U+274C";
 	public static final String GREEN_TICK = "U+2714";
 	
