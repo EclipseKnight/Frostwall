@@ -33,14 +33,6 @@ public class DiscordEventMessageAnalyzer extends ListenerAdapter {
 	private Matcher matcher = pattern.matcher("");
 	
 	
-	
-	/*
-	 * Steps:
-	 * Check if message has links
-	 * Check if the link exists in the database
-	 * If it does, check if it is allowed.
-	 * If it doesn't, run an analysis 
-	 */
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
 		if (!DiscordBot.configuration.getFeatures().get(feature).isEnabled()) {
