@@ -57,6 +57,7 @@ public class VTUtils {
 			
 		} catch (IOException e) {
 			Logger.log(Level.ERROR, "Exception occurred while making endpoint request: " + e.toString());
+			Logger.log(Level.ERROR, "Visit https://developers.virustotal.com/v3.0/reference#errors to view errors.");
 			//run alternative in case auth error or rate limit.
 			attrMap.put("error", "true");
 		}
