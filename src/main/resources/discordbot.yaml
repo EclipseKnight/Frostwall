@@ -54,8 +54,6 @@ guild_id:
 #example feature *=required
 #  poop_on_user   
 #     enabled:* [true, false] - is command disabled or not. 
-#     linked: [true, false] - does user have to be linked.
-#     affiliate: [true, false] - is affiliate or not. 
 #     description:* "input a description of this command, displayed via help command".
 #     channels: - [0]=null if command can be used everywhere, otherwise put channels it can be used in.
 #        - null*
