@@ -10,6 +10,8 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscordConfiguration {
+	
+	private String appDirPath;
 
 	private Map<String, String> bot;
 	
@@ -27,7 +29,6 @@ public class DiscordConfiguration {
 
 	private Map<String, DiscordFeature> features;
 
-	
 	public Map<String, String> getBot() {
 		return bot;
 	}

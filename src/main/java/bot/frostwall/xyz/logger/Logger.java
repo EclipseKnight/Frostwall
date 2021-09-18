@@ -22,7 +22,7 @@ public class Logger {
 	/*
 	 * Path to the directory where logs are stored. 
 	 */
-	public static String PATH = Launcher.UWD  + File.separator + "frostwall" + File.separator + "logs";
+	public static String PATH = Launcher.uwd  + File.separator + "frostwall" + File.separator + "logs";
 	
 	public static final String RESET = "\033[0m";  // Text Reset
 

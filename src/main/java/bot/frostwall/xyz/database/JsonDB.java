@@ -22,7 +22,7 @@ import net.lingala.zip4j.ZipFile;
 
 public class JsonDB {
 
-	public static String dbFilesLocation = Launcher.UWD  + File.separator + "frostwall" + File.separator + "database";
+	public static String dbFilesLocation = Launcher.uwd  + File.separator + "frostwall" + File.separator + "database";
 	private static String baseScanPackage = "bot.frostwall.xyz.database.documents";
 	public static JsonDBTemplate database;
 	
@@ -85,7 +85,7 @@ public class JsonDB {
 		String path = DiscordBot.configuration.getDatabase().get("backup_path");
 		
 		if (path == null) {
-			path = Launcher.BOT_DIR + "backups";
+			path = Launcher.botDir + "backups";
 		}
 		
 		File backupDir = new File(path);
@@ -114,7 +114,7 @@ public class JsonDB {
 		String logChannel = DiscordBot.configuration.getDatabase().get("backup_log_channel");
 		
 		if (destPath == null) {
-			destPath = Launcher.BOT_DIR + "backups";
+			destPath = Launcher.botDir + "backups";
 		}
 		
 		// output to discord if channel available. 

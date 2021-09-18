@@ -5,11 +5,11 @@
 #                                                                                      #
 ########################################################################################
 
+
 bot:
     # Name of your bot
     name: Frostwall
-    
-    
+  
 api:
     
     # Discord Application Client Id

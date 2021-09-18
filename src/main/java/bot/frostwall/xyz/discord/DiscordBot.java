@@ -56,6 +56,7 @@ public class DiscordBot {
 		// Load configuration
 		loadConfiguration();
 		
+		
 		if (configuration.getApi().get("discord_client_id") == null 
         		|| configuration.getApi().get("discord_client_token") == null
         		|| configuration.getOwnerId() == null) {
@@ -128,9 +129,9 @@ public class DiscordBot {
 	 * Load the configuration file for the discord bot.
 	 */
 	public static void loadConfiguration() {
-		File discordBotConfig = new File(Launcher.BOT_DIR + "configs" + File.separator + "discordbot.yaml");
+		File discordBotConfig = new File(Launcher.botDir + "configs" + File.separator + "discordbot.yaml");
 		
-		if (new File(Launcher.BOT_DIR + "configs").mkdirs()) {
+		if (new File(Launcher.botDir + "configs").mkdirs()) {
 			Logger.log(Level.WARN, "Generating configs directory...");
 		}
 		
@@ -163,7 +164,7 @@ public class DiscordBot {
         	
         	// copies twitchbot.yaml template to current working directory.
         	InputStream original = classloader.getResourceAsStream("discordbot.yaml");
-            Path copy = Paths.get(new File(Launcher.BOT_DIR + "configs" + File.separator + "discordbot.yaml").toURI());
+            Path copy = Paths.get(new File(Launcher.botDir + "configs" + File.separator + "discordbot.yaml").toURI());
           
             Logger.log(Level.WARN, "Generating config at " + copy);
             Files.copy(original, copy);

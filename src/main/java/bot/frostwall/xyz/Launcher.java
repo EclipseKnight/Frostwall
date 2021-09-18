@@ -14,9 +14,10 @@ public class Launcher {
 	/**
 	 * User working directory.
 	 */
-	public static final String UWD = System.getProperty("user.dir");
+	public static String uwd = System.getProperty("user.dir");
 	
-	public static final String BOT_DIR = System.getProperty("user.dir") + File.separator + "frostwall" + File.separator;
+	public static String botDir = System.getProperty("user.dir") + File.separator + "frostwall" + File.separator;
+	
 	
 	/**
 	 * Discord bot instance.
@@ -25,6 +26,13 @@ public class Launcher {
 	
 	
 	public static void main(String[] args) {
+		//arg[0] folder to generate and store everything.
+		if (args.length > 0) {
+			uwd = args[0];
+			botDir = uwd + File.separator + "frostwall" + File.separator;
+			
+		}  
+		
 		// allows ANSI escape sequences to format console output. For loggers. aka PRETTY COLORS
 		AnsiConsole.systemInstall();
 		
